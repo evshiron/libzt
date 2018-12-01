@@ -103,7 +103,7 @@ to the core. Meanwhile, incoming frames from the ZeroTier wire will be allocated
 pointers will be cached in the receive frame buffer of the size LWIP_MAX_GUARDED_RX_BUF_SZ to 
 await the next callback from the core */
 
-#define LWIP_GUARDED_BUF_CHECK_INTERVAL	50 // in ms
+#define LWIP_GUARDED_BUF_CHECK_INTERVAL	3 // in ms
 #define LWIP_MAX_GUARDED_RX_BUF_SZ	1024 // number of frame pointers that can be cached waiting for receipt into core
 #define LWIP_FRAMES_HANDLED_PER_CORE_CALL 16 // How many frames are handled per call from core
 
