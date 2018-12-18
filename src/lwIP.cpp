@@ -318,7 +318,9 @@ void lwip_eth_rx(VirtualTap *tap, const ZeroTier::MAC &from, const ZeroTier::MAC
 		DEBUG_ERROR("dropped packet -- guarded receive buffer full, adjust MAX_GUARDED_RX_BUF_SZ or LWIP_GUARDED_BUF_CHECK_INTERVAL");
 		return;
 	}
-	pbuf_ref(p); // Increment reference to allow user application to copy data from buffer -- Will be automatically deallocated by socket API
+	// enable pbuf to be freed, things still work but I don't know if I break anything
+	// https://github.com/zerotier/libzt/issues/45
+	//pbuf_ref(p); // Increment reference to allow user application to copy data from buffer -- Will be automatically deallocated by socket API
 	lwip_frame_rxbuf[lwip_frame_rxbuf_tot] = p;
 	lwip_frame_rxbuf_tot += 1;
 }
