@@ -1,0 +1,14 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+    - image: rikorose/gcc-cmake:gcc-8
+    steps:
+    - checkout
+    - run: make update
+    - run: make patch
+    - run: make host_debug
+    - run: make host_release
+    - store_artifacts:
+        path: lib

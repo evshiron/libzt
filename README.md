@@ -1,4 +1,7 @@
 # ZeroTier SDK (libzt, libztcore)
+
+[![CircleCI](https://circleci.com/gh/evshiron/libzt.svg?style=svg)](https://circleci.com/gh/evshiron/libzt)
+
 Library edition of [ZeroTier](https://github.com/zerotier/ZeroTierOne)
 ***
 
